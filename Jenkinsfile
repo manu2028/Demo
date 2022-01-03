@@ -10,7 +10,9 @@ node(){
         }
 
         stage ("Testing") {
-            println "Testing stage"
+            dir("demo"){
+                sh "./gradlew build"
+            }
         }
     }finally{
         deleteDir()
