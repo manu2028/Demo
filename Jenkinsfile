@@ -2,10 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
-                git branch: 'main', credentialsId: 'jenkins-credentials', url: 'https://github.com/manu2028/JenkinsPipelineDemo.git'
+                echo 'Building'
+             }
+        }
+        stage('Test'){
+            steps{
+                echo 'Testing'
+            }
+        }
+        stage('Deploy'){
+            steps{
+                echo 'Deploying'
             }
         }
     }
