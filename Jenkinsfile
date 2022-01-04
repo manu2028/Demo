@@ -26,7 +26,7 @@ node(){
             stage("Deployment"){
                 // Stop tomcat
                 sh "/Users/manognadasari/Documents/apache-tomcat-9.0.56/bin/shutdown.sh"
-                 sh "/Users/manognadasari/Documents/apache-tomcat-9.0.56/webapps/rm -rf demo.war demo"
+                 sh "/Users/manognadasari/Documents/apache-tomcat-9.0.56/webapps/rm demo"
 
                 // Remove old files
 
