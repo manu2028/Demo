@@ -26,7 +26,7 @@ node(){
             stage("Deployment"){
                 // Stop tomcat
                 sh "/Users/manognadasari/Documents/apache-tomcat-9.0.56/bin/shutdown.sh"
-                 sh "/Users/manognadasari/Documents/apache-tomcat-9.0.56/webapps/rm -r demo"
+                 sh "rm -rf /Users/manognadasari/Documents/apache-tomcat-9.0.56/webapps/demo*"
 
                 // Remove old files
 
@@ -34,7 +34,7 @@ node(){
 
                 // Copy new WAR file
 
-                sh "/Users/manognadasari/Downloads/cp -R demo webapps "
+                sh "mv build/libs/demo-0.0.1-SNAPSHOT.war /Users/manognadasari/Documents/apache-tomcat-9.0.56/webapps/demo.war"
 
 
                 // Start tomcat
